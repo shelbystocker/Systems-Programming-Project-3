@@ -13,15 +13,19 @@ This project creates a server with four client applications.
 	How to run server: ./smalld port secretKey &
 		Note: none of the clients will work if the port and secret key do not match
 			the port and secret key specified in the command line of the server call.
+			
 The clients do as follows:
+
 	- smallSet takes a variable name and a value. 
 		The server sets that variable (internally to the server) to that value. 
 		The client prints nothing unless the command fails, in which case it prints failed.
 		How to run: ./smallSet MachineName port secretKey variable value
+		
 	- smallGet takes a variable name as its detail. 
 		The server reports the contents of that variable or failure if such a variable is not set. 
 		The client prints the contents it receives from the server, or failed.
 		How to run: ./smallGet MachineName port secretKey variable
+		
 	- smallDigest returns the result of this invocation: /bin/echo value | /usr/bin/sha256sum . 
 		The client prints the result it receives from the server, or failed.
 		How to run: ./smallDigest MachineName port secretKey value
